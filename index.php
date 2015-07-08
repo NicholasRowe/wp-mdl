@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package playground
+ * @package wp_mdl
  */
 
 get_header(); ?>
@@ -32,7 +32,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php playground_paging_nav(); ?>
+				<?php wp_mdl_paging_nav(); ?>
 
 			<?php else : ?>
 

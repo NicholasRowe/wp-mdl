@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package playground
+ * @package wp_mdl
  */
 ?>
 
@@ -15,13 +15,13 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'playground' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'wp_mdl' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php edit_post_link( __( 'Edit', 'playground' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'wp_mdl' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

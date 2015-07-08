@@ -4,7 +4,7 @@
 *
 * Displays all of the <head> section and everything up till <div id="content">
 *
-* @package playground
+* @package wp_mdl
 */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -16,7 +16,8 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,600' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/global.css ?> ">
+
+	<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
 
 	<?php wp_head(); ?>
 </head>

@@ -1,8 +1,8 @@
 <?php
 /**
- * playground functions and definitions
+ * wp_mdl functions and definitions
  *
- * @package playground
+ * @package wp_mdl
  */
 
 /**
@@ -12,7 +12,7 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'playground_setup' ) ) :
+if ( ! function_exists( 'wp_mdl_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -20,15 +20,15 @@ if ( ! function_exists( 'playground_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function playground_setup() {
+function wp_mdl_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on playground, use a find and replace
-	 * to change 'playground' to the name of your theme in all the template files
+	 * If you're building a theme based on wp_mdl, use a find and replace
+	 * to change 'wp_mdl' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'playground', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'wp_mdl', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ function playground_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'playground' ),
+		'primary' => __( 'Primary Menu', 'wp_mdl' ),
 		) );
 
 	/*
@@ -70,22 +70,22 @@ function playground_setup() {
 		) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'playground_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'wp_mdl_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 		) ) );
 }
-endif; // playground_setup
-add_action( 'after_setup_theme', 'playground_setup' );
+endif; // wp_mdl_setup
+add_action( 'after_setup_theme', 'wp_mdl_setup' );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function playground_widgets_init() {
+function wp_mdl_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'playground' ),
+		'name'          => __( 'Sidebar', 'wp_mdl' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -94,7 +94,7 @@ function playground_widgets_init() {
 		'after_title'   => '</h1>',
 		) );
 }
-add_action( 'widgets_init', 'playground_widgets_init' );
+add_action( 'widgets_init', 'wp_mdl_widgets_init' );
 
 /**
  * Implement the Custom Header feature.
@@ -141,7 +141,7 @@ function rs_load_azure_scripts() {
 	 * Loads the main stylesheet files.
 	 */
 	wp_enqueue_style( 'material-styles', $template_dir . '/css/material.css' );
-	wp_enqueue_style( 'material-styles', $template_dir . '/css/global.css' );
+	wp_enqueue_style( 'global-styles', $template_dir . '/css/global.css' );
 	wp_enqueue_style( 'azure-style', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'rs_load_azure_scripts' );

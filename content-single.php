@@ -1,29 +1,40 @@
 <?php
 /**
- * @package playground
+ * @package wp_mdl
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<div class="entry-meta">
-			<?php playground_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-	<div class="entry-content">
+	<div class="mdl-card__media mdl-color-text--grey-50">
+		<h1><?php the_title(); ?></h1>
+	</div>
+
+	<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+		<div class="minilogo"></div>
+		<div>
+			<strong>The Newist</strong>
+			<span><?php wp_mdl_posted_on(); ?></span>
+		</div>
+		<div class="section-spacer"></div>
+		<div class="meta__favorites">425 <i class="material-icons">favorite</i></div>
+		<div><i class="material-icons">bookmark</i></div>
+		<div><i class="material-icons">share</i></div>
+	</div>
+
+	<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+
 		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'playground' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php playground_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+		<?php
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . __( 'Pages:', 'wp_mdl' ),
+			'after'  => '</div>',
+			) );
+			?>
+
+	</div>
+		
+</div>
+
